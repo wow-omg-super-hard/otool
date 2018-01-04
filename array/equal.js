@@ -28,7 +28,5 @@ export default function equal (target, source) {
     return true;
   })) {
     return false;
-  }
-
   return true;
 }
