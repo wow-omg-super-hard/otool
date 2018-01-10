@@ -10,6 +10,6 @@ export default function uniq (target) {
   return target.filter(item => {
     key = typeof item + (isNaN(item) ? 'NaN' : JSON.stringify(item));
 
-    return result.hasOwnProperty(key) ? true : (result[ key ] = true);
+    return result.hasOwnProperty(key) ? false : (result[ key ] = true);
   });
 }
