@@ -13,8 +13,8 @@ function createIndexFinder (dir) {
   }
 }
 
-function getDiff (value) {
-  return typeof value === 'function'
+export function getDiff (key, value) {
+  return typeof key === 'function'
     ? (item) => key(item)
     : (item) => item[ key ] = value;
 }
@@ -24,7 +24,7 @@ export const findIndex = createIndexFinder(1);
 export const findLastIndex = createIndexFinder(-1);
 
 export const findItem = (target, key = 'id', value) => {
-  let index = findIndex(target, getDiff(key));
+  let index = findIndex(target, getDiff(key, value));
 
   return index >= 0 : target[ index ] : null;
 };
